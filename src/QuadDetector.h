@@ -36,17 +36,17 @@ class QuadDetector
 	// the maximum value of (marker's max distance from the camera) / (marker's min distance from the camera) (default: 1.5)
 	double thresProjectiveDistortion = 1.5;
 
-	vector<vector<Corner>> cornerGroups;
+	vector<vector<Corner> > cornerGroups;
 	vector<Quad> distortedQuads;
 	vector<Quad> quads;
 
 	// forms groups of line segments that may form a quad (line segments must be >=4 and from the same edge segment)
 	// each line group is represented by a vector<int>, and each line segment is represented by an int (its index)
-	vector<vector<int>> groupLines(const cv::Mat &image, EDInterface* edInterface);
+	vector<vector<int> > groupLines(const cv::Mat &image, EDInterface* edInterface);
 
 	// detects corners as intersections of consecutive line segments on an edge segment
 	// (with the condition that the intersection lies on the same edge segment)
-	void detectCorners(EDInterface* edInterface, const vector<vector<int>> &lineGroups);
+	void detectCorners(EDInterface* edInterface, const vector<vector<int> > &lineGroups);
 
 	// returns true if the corners form a quad
 	// will replace corners[1] or corners[3] with estimated corners if needed
@@ -64,7 +64,7 @@ public:
 
 	void detectQuads(const cv::Mat &image, EDInterface* edInterface);
 
-	const vector<vector<Corner>>& getCornerGroups();
+	const vector<vector<Corner> >& getCornerGroups();
 
 	const vector<Quad>& getQuads() const;
 

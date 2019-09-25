@@ -1,6 +1,7 @@
 //Burak - Periodical line fits addeed to SplitSegment2Lines
 
 #include <math.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <float.h>
 

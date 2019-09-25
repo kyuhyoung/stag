@@ -24,7 +24,7 @@ public:
 	void drawLines(const string& path, cv::Mat image, EDLines* edLines);
 
 	// draws corners (intersections of line segments)
-	void drawCorners(const string& path, cv::Mat image, const vector<vector<Corner>> &cornerGroups);
+	void drawCorners(const string& path, cv::Mat image, const vector<vector<Corner> > &cornerGroups);
 
 	// draws quads
 	void drawQuads(const string& path, cv::Mat image, const vector<Quad> &quads);
