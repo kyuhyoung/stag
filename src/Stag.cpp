@@ -44,6 +44,10 @@ void Stag::detectMarkers(Mat inImage)
 		poseRefiner.refineMarkerPose(&edInterface, markers[indMarker]);
 }
 
+Mat Stag::drawMarkers(const Mat& im_bgr)
+{
+	return drawer.drawMarkers(im_bgr, markers);
+}
 
 void Stag::logResults(string path)
 {

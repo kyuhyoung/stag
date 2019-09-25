@@ -31,6 +31,9 @@ public:
 
 	// draws markers
 	void drawMarkers(const string& path, cv::Mat image, const vector<Marker> &markers);
+	
+	// draws markers and return the image with markers for display.
+	cv::Mat drawMarkers(const cv::Mat im_bgr, const vector<Marker> &markers);
 
 	// draws refined markers and their ellipses
 	void drawEllipses(const string& path, cv::Mat image, const vector<Marker> &markers);

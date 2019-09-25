@@ -35,6 +35,7 @@ class Stag
 public:
 	Stag(int libraryHD = 15, int errorCorrection = 7, bool inKeepLogs = false);
 	void detectMarkers(cv::Mat inImage);
+	cv::Mat drawMarkers(const cv::Mat& im_bgr);
 	void logResults(string path = "");
 };
 
