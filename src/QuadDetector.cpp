@@ -25,9 +25,10 @@ void QuadDetector::detectQuads(const cv::Mat &image, EDInterface* edInterface)
 	EDLines* edLines = edInterface->getEDLines();
 
 	vector<vector<int>> lineGroups = groupLines(image, edInterface);
-
+    std::cout << "lineGroups.size() : " << lineGroups.size() << std::endl;  //exit(0);
 	detectCorners(edInterface, lineGroups);
 
+    std::cout << "cornerGroups.size() : " << cornerGroups.size() << std::endl;  //exit(0);
 	// create quads using corner groups
 	for (int indCornerGroup = 0; indCornerGroup < cornerGroups.size(); indCornerGroup++)
 	{
@@ -58,6 +59,7 @@ void QuadDetector::detectQuads(const cv::Mat &image, EDInterface* edInterface)
 			Quad quad(cornerLocs);
 
 			// eliminate if projective distortion is larger than the threshold
+			std::cout << "quad.projectiveDistortion : " << quad.projectiveDistortion << ", thresProjectiveDistortion : " << thresProjectiveDistortion << std::endl;  
 			if (quad.projectiveDistortion > thresProjectiveDistortion)
 			{
 				if (keepLogs)
