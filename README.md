@@ -6,10 +6,10 @@ $ make
 ```
 ### run
 #### to detect markers in a single image file.
-##### for example, to detect markers of library 11 with error correction 7 in a image file whose path is /mnt/work/21924.png, run the follwing commands and check out the directory 'log'.
+##### for example, to detect markers of library 11 with error correction 7 in a image file whose path is /mnt/work/sample_11_21924.png, run the follwing commands and check out the directory 'log'.
 ```
 $ mkdir log
-$ ./Stag 11 7 /mnt/work/21924.png
+$ ./Stag 11 7 /mnt/work/sample_11_21924.png
 ```
 #### to detect markers in the frames of camera capturing.
 ##### for example, to detect markers of library 11 with error correction 7 in the captured frames of a camera whose camera index is 0, run the follwing commnads and you wiil see a window named "marker detection"
