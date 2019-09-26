@@ -54,6 +54,7 @@ Mat Stag::drawMarkers(const Mat& im_bgr)
 	//Mat im_bgr_quad = drawer.drawQuads(im_bgr, quadDetector.getQuads());
 	Mat im_bgr_marker = drawer.drawMarkers(im_bgr, markers);
     //if(markers.size()) { std::cout << "saving ... " << std::endl;   drawer.drawMarkers("markers.bmp", image, markers);    exit(0);}
+    //if(markers.size()) imwrite("sample_11_21924.png", im_bgr);
     markers.clear();
     return im_bgr_marker;
 }
