@@ -1,5 +1,27 @@
 # STag: A Stable Fiducial Marker System
+## my additional README
+### build
+```
+$ make
+```
+### run
+#### to detect markers in a single image file.
+##### for example, to detect markers of library 11 with error correction 7 in a image file whose path is /mnt/work/21924.png, run the follwing commands and check out the directory 'log'.
+```
+$ mkdir log
+$ ./Stag 11 7 /mnt/work/21924.png
+```
+#### to detect markers in the frames of camera capturing.
+##### for example, to detect markers of library 11 with error correction 7 in the captured frames of a camera whose camera index is 0, run the follwing commnads and you wiil see a window named "marker detection"
+```
+$ ./Stag 11 7 0
+```
+#### shell script.
+```
+$ sh stag.sh
+```
 
+## original README of bbenligiray
 Code used in the following paper:
 
 [B. Benligiray; C. Topal; C. Akinlar, "STag: A Stable Fiducial Marker System," Image and Vision Computing (Accepted), 2019.](https://arxiv.org/abs/1707.06292)
