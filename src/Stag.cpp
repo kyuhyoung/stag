@@ -24,8 +24,8 @@ void Stag::detectMarkers(Mat inImage)
 
 	vector<Quad> quads = quadDetector.getQuads();
     
-    std::cout << "quads.size() : " << quads.size() << std::endl;
-    std::cout << "markers.size() b4 : " << markers.size() << std::endl;
+    //std::cout << "quads.size() : " << quads.size() << std::endl;
+    //std::cout << "markers.size() b4 : " << markers.size() << std::endl;
 
 	for (int indQuad = 0; indQuad < quads.size(); indQuad++)
 	{
@@ -45,7 +45,7 @@ void Stag::detectMarkers(Mat inImage)
 
 	for (int indMarker = 0; indMarker < markers.size(); indMarker++)
 		poseRefiner.refineMarkerPose(&edInterface, markers[indMarker]);
-    std::cout << "markers.size() after : " << markers.size() << std::endl;
+    std::cout << "# of detected maarkers : " << markers.size() << std::endl;
     //if(markers.size()) exit(0);
 }
 

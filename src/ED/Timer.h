@@ -26,6 +26,7 @@ public:
 		stopped = 0;
 		startTimeInMicroSec = 0;
 		endTimeInMicroSec = 0;
+        m_n_frame = 0;
 	}                                    // default constructor
 	~Timer() {};                                   // default destructor
 
@@ -48,7 +49,13 @@ public:
 		gettimeofday(&endCount, NULL);
 #endif
 	}
-	
+
+    double updateFPS()
+    {
+        double secElaps = ElapsedTimeInSec();
+        return (double)(++m_n_frame) / secElaps;
+    }
+
 	double ElapsedTime()                    // get elapsed time in milli-second
 	{
 	    return this->ElapsedTimeInMilliSec();
@@ -64,7 +71,7 @@ public:
 	double ElapsedTimeInMicroSec()          // get elapsed time in micro-second
 	{
 #if defined(WIN32) || defined(_WIN32)
-    	if(!stopped) QueryPerformanceCounter(&endCount);
+        if(!stopped) QueryPerformanceCounter(&endCount);
 		startTimeInMicroSec = startCount.QuadPart * (1000000.0 / frequency.QuadPart);
 		endTimeInMicroSec = endCount.QuadPart * (1000000.0 / frequency.QuadPart);
 #else
@@ -82,6 +89,7 @@ private:
 	double startTimeInMicroSec;                 // starting time in micro-second
 	double endTimeInMicroSec;                   // ending time in micro-second
 	int    stopped;                             // stop flag 
+    unsigned long long m_n_frame;
 #if defined(WIN32) || defined(_WIN32)
 	LARGE_INTEGER frequency;                    // ticks per second
 	LARGE_INTEGER startCount;                   //
